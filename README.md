@@ -35,7 +35,7 @@ The output is a data frame with the values of the function on the original data 
 
 ``` S
 mtcars %>% slipper(mean(mpg),B=100) %>%
-  filter(type="bootstrap") %>% 
+  filter(type=="bootstrap") %>% 
   summarize(ci_low = quantile(value,0.025),
             ci_high = quantile(value,0.975))
 ```
