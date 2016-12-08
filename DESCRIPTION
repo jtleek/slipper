@@ -7,7 +7,8 @@ Description: This package makes it easy to do some common bootstrapping tasks in
 Depends:
     R (>= 3.3.1),
     tidyverse,
-    lazyeval
+    lazyeval,
+    broom
 License: MIT
 Encoding: UTF-8
 LazyData: true
