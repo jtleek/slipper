@@ -32,7 +32,7 @@ mtcars \%>\% slipper(mean(mpg),B=100)
 
 # Calculate a confidence interval using the quantiles method
 mtcars \%>\% slipper(mean(mpg),B=100) \%>\%
- filter(type="bootstrap") \%>\% 
+ filter(type="bootstrap") \%>\%
  summarize(ci_low = quantile(value,0.025),
            ci_high = quantile(value,0.975))
 
