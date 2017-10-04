@@ -1,6 +1,6 @@
 Package: slipper
 Title: Easy and tidy bootstrapping
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: person("Jeff", "Leek", email = "jtleek@gmail.com", role = c("aut", "cre"))
 Description: This package makes it easy to do some common bootstrapping tasks in
     a tidy way.
