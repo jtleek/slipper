@@ -2,5 +2,7 @@
 
 export(slipper)
 export(slipper_)
+export(slipper_ci)
+export(slipper_ci_)
 export(slipper_lm)
 export(slipper_lm_)

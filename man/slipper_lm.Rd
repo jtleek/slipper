@@ -57,4 +57,3 @@ boot = mtcars \%>\% slipper_lm(mpg ~ cyl, null_formula = mpg ~ 1,B=1000) \%>\%
                                den = n(),
                                pval = num/den)
 }
-

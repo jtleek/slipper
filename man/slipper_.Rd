@@ -38,4 +38,3 @@ mtcars \%>\% slipper(mean(mpg),B=100) \%>\%
 
 
 }
-
