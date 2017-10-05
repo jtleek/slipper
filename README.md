@@ -10,7 +10,7 @@ But I'm too dumb for any of those. So slipper includes some simple,pipeable boot
 ### install
 with `devtools`:
 
-```S
+```r
 devtools::install_github('jtleek/slipper')
 ```
 
@@ -21,19 +21,19 @@ There are only two functions in this package.
 Call `slipper` to bootstrap any function that returns
 a single value. 
 
-```S
+```r
 slipper(mtcars,mean(mpg),B=100)
 ```
 
 slipper is built to work with pipes and the tidyverse too. 
 
-```S
+```r
 mtcars %>% slipper(mean(mpg),B=100)
 ```
 
 The output is a data frame with the values of the function on the original data set and the bootstrapped replicates. You can calculate confidence intervals using summarize
 
-``` S
+```r
 mtcars %>% slipper(mean(mpg),B=100) %>%
   filter(type=="bootstrap") %>% 
   summarize(ci_low = quantile(value,0.025),
@@ -42,13 +42,13 @@ mtcars %>% slipper(mean(mpg),B=100) %>%
 
 You can also bootstrap linear models using `slipper_lm` just pass the data frame and the formula you want to fit on the original data and on the bootstrap samples. 
 
-``` S
+```r
  slipper_lm(mtcars,mpg ~ cyl,B=100)
 ```
 
 This is also pipeable
 
-```S
+```r
 mtcars %>% slipper_lm(mpg ~ cyl,B=100)
 ```
 
@@ -60,7 +60,7 @@ mtcars %>% slipper_lm(mpg ~ cyl,B=100,boot_resid=TRUE)
 
 You can calculate bootstrap confidence intervals in the same way as you do for `slipper`.
 
-```S
+```r
 mtcars %>% slipper_lm(mpg ~ cyl,B=100) %>% 
  filter(type=="bootstrap",term=="cyl") %>%
   summarize(ci_low = quantile(value,0.025),
@@ -69,7 +69,7 @@ mtcars %>% slipper_lm(mpg ~ cyl,B=100) %>%
 
 Finally if you want to do a bootstrap hypothesis test you can pass a formula and a nested null formula. `formula` must every term in `null_formula` and one additional one you want to test. 
 
-```S
+```r
 # Bootstrap hypothesis test - 
 # here I've added one to the numerator
 # and denominator because bootstrap p-values should 
